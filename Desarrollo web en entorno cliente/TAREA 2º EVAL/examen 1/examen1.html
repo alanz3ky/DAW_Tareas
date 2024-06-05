@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio1</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        margin: 0;
+      }
+
+      #titulo1 {
+        text-align: center;
+      }
+
+      .formulario {
+        text-align: center;
+        max-width: 400px;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      #resultado {
+        text-align: center;
+      }
+
+      .formulario input[type="text"],
+      .formulario input[type="checkbox"] {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="titulo1">Desenvolvemento web en contorno cliente</h1>
+    <h1 class="titulo1">Coordenadas</h1>
+
+    <form
+      class="formulario"
+      id="formulario1"
+      action="http://www.google.es"
+      method="get"
+    >
+      <p>
+        Solicita el ingreso de la cordenada de un punto.<br />
+        El formato a ingresar por teclado es (9999,9999). <br />
+        Los números pueden tener entre 1 y 4 dígitos.
+      </p>
+      <label for="coordenadas">Coordenadas:</label>
+      <input type="text" name="coordenadas" id="coordenadas" required />
+      <br />
+      <label for="campo">Este es un checkbox:</label>
+      <input type="checkbox" id="campo" name="campo" value="Si" />
+      <input type="submit" name="enviar" id="enviar" value="Enviar" />
+    </form>
+    <div id="resultado">
+
+    </div>
+
+    <script type="text/javascript" src="examen1.js"></script>
+  </body>
+</html>

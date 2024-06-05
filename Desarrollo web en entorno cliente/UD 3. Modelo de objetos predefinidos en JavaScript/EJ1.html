@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+
+document.body.innerHTML = '<h1>TAREA DWEC03</h1><hr />';
+
+// Solicitar nombre y apellidos al usuario
+let nombreCompleto = prompt("Introduzca su nombre y apellidos");
+
+// Solicitar fecha de nacimiento al usuario 
+let diaNacimiento = prompt("Introduzca el DIA numerico de nacimiento,");
+let mesNacimiento = prompt("Introduzca MES numerico de nacimiento");
+let anhoNacimiento = prompt("Introduzca AÑO numerico de nacimiento");
+
+
+// Calcular edad
+let fechaNacimiento = new Date(anhoNacimiento, mesNacimiento - 1, diaNacimiento); //Se crea un objeto de tipo fecha
+let hoy = new Date(); // Lo mismo pero con la fecha actual 
+let edad = hoy.getFullYear() - fechaNacimiento.getFullYear();  // Calcula la diferencia entre la fecha actual y el año de nacimiento del usuario
+
+
+// Crear div
+let div = document.createElement("div");
+div.style.backgroundColor = "blue";  //Aplica el color azul al fondo del documento
+div.style.color = "white";       // Aplica color blanco al texto
+div.style.textAlign = "center";// Alinea el texto al centro
+div.id = "main";
+document.body.appendChild(div);
+
+// Imprimir datos
+div.innerHTML += "Buenos dias " + nombreCompleto.split(" ")[0] + "<br>";
+div.innerHTML += "Tu nombre y apellidos tiene " + nombreCompleto.length + " caracteres, incluidos espacios.<br>";
+div.innerHTML += "La primera letra A de tu nombre y apellidos está en la posición: " + nombreCompleto.indexOf('A') + "<br>";
+div.innerHTML += "La última letra A de tu nombre y apellidos está en la posición: " + nombreCompleto.lastIndexOf('A') + "<br>";
+div.innerHTML += "Tu nombre menos las 3 primeras letras es: " + nombreCompleto.substring(3) + "<br>";
+div.innerHTML += "Tu nombre todo en mayúsculas es: " + nombreCompleto.toUpperCase() + "<br>";
+div.innerHTML += "Tu edad es: " + edad + " años.<br>";
+div.innerHTML += "Naciste un feliz " + diaNacimiento + " " + "del "+ mesNacimiento + " del año " + anhoNacimiento + ".<br>";
+div.innerHTML += "El coseno de 180 es: " + Math.cos(180) + "<br>";
+div.innerHTML += "El número mayor de (34,67,23,75,35,19) es: " + Math.max(34,67,23,75,35,19) + "<br>";
+div.innerHTML += "Ejemplo de número al azar: " + Math.random() + "<br>";
+div.innerHTML += "Cadena que contiene la url completa: " + window.location.href;
+</script>
+
+</body>
+</html>
